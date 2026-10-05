@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Planejador de Viagens</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Identificação do sistema -->
+    <header>
+        <h1>Meu Planejador de Viagens</h1>
+        <p>Organize as viagens que você quer fazer ou já fez.</p>
+
+        <!-- Navegação -->
+        <nav>
+            <a href="#cadastro">Cadastrar</a>
+            <a href="#lista">Minhas Viagens</a>
+            <a href="#detalhes">Detalhes</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Formulário de cadastro da entidade principal (Viagem) -->
+        <section id="cadastro">
+            <h2>Cadastrar nova viagem</h2>
+
+            <form>
+                <p>
+                    <label for="destino">Destino:</label>
+                    <input type="text" id="destino" name="destino" required>
+                </p>
+
+                <p>
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais" required>
+                </p>
+
+                <p>
+                    <label for="ida">Data de ida:</label>
+                    <input type="date" id="ida" name="ida">
+                </p>
+
+                <p>
+                    <label for="volta">Data de volta:</label>
+                    <input type="date" id="volta" name="volta">
+                </p>
+
+                <p>
+                    <label for="orcamento">Orçamento (R$):</label>
+                    <input type="number" id="orcamento" name="orcamento" min="0">
+                </p>
+
+                <p>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="planejada">Planejada</option>
+                        <option value="realizada">Realizada</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="foto">Link da foto:</label>
+                    <input type="url" id="foto" name="foto" placeholder="https://...">
+                </p>
+
+                <p>
+                    <label for="obs">Observações:</label>
+                    <textarea id="obs" name="obs" rows="3"></textarea>
+                </p>
+
+                <button type="submit">Salvar viagem</button>
+            </form>
+        </section>
+
+        <!-- Busca, filtro e ordenação -->
+        <section id="busca">
+            <h2>Buscar e organizar</h2>
+
+            <p>
+                <label for="pesquisa">Pesquisar:</label>
+                <input type="search" id="pesquisa" name="pesquisa" placeholder="Digite um destino">
+                <button type="button">Buscar</button>
+            </p>
+
+            <p>
+                <label for="filtro">Filtrar por status:</label>
+                <select id="filtro" name="filtro">
+                    <option value="todas">Todas</option>
+                    <option value="planejada">Planejadas</option>
+                    <option value="realizada">Realizadas</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="ordenar">Ordenar por:</label>
+                <select id="ordenar" name="ordenar">
+                    <option value="destino">Destino (A-Z)</option>
+                    <option value="data">Data de ida</option>
+                    <option value="orcamento">Orçamento</option>
+                </select>
+            </p>
+        </section>
+
+        <!-- Lista das viagens cadastradas (dados de exemplo) -->
+        <section id="lista">
+            <h2>Minhas viagens</h2>
+
+            <article>
+                <h3>Lisboa</h3>
+                <img src="https://picsum.photos/seed/lisboa/400/200" alt="Foto de Lisboa">
+                <p><strong>País:</strong> Portugal</p>
+                <p><strong>Ida:</strong> 10/01/2026 - <strong>Volta:</strong> 20/01/2026</p>
+                <p><strong>Orçamento:</strong> R$ 8000</p>
+                <p><strong>Status:</strong> Planejada</p>
+                <button type="button">Ver detalhes</button>
+                <button type="button">Editar</button>
+                <button type="button">Excluir</button>
+            </article>
+
+            <article>
+                <h3>Buenos Aires</h3>
+                <img src="https://picsum.photos/seed/buenos/400/200" alt="Foto de Buenos Aires">
+                <p><strong>País:</strong> Argentina</p>
+                <p><strong>Ida:</strong> 05/03/2025 - <strong>Volta:</strong> 12/03/2025</p>
+                <p><strong>Orçamento:</strong> R$ 4000</p>
+                <p><strong>Status:</strong> Realizada</p>
+                <button type="button">Ver detalhes</button>
+                <button type="button">Editar</button>
+                <button type="button">Excluir</button>
+            </article>
+
+            <article>
+                <h3>Roma</h3>
+                <img src="https://picsum.photos/seed/roma/400/200" alt="Foto de Roma">
+                <p><strong>País:</strong> Itália</p>
+                <p><strong>Ida:</strong> 15/07/2026 - <strong>Volta:</strong> 30/07/2026</p>
+                <p><strong>Orçamento:</strong> R$ 12000</p>
+                <p><strong>Status:</strong> Planejada</p>
+                <button type="button">Ver detalhes</button>
+                <button type="button">Editar</button>
+                <button type="button">Excluir</button>
+            </article>
+        </section>
+
+        <!-- Área de detalhes de uma viagem (exemplo) -->
+        <section id="detalhes">
+            <h2>Detalhes da viagem</h2>
+
+            <article>
+                <h3>Lisboa</h3>
+                <img src="https://picsum.photos/seed/lisboa/400/200" alt="Foto de Lisboa">
+                <p><strong>País:</strong> Portugal</p>
+                <p><strong>Data de ida:</strong> 10/01/2026</p>
+                <p><strong>Data de volta:</strong> 20/01/2026</p>
+                <p><strong>Orçamento:</strong> R$ 8000</p>
+                <p><strong>Status:</strong> Planejada</p>
+                <p><strong>Observações:</strong> Levar casaco, é inverno lá.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Informações extras -->
+    <aside>
+        <h2>Dica</h2>
+        <p>Cadastre suas viagens para não esquecer datas e orçamentos.</p>
+    </aside>
+
+    <footer>
+        <p>Meu Planejador de Viagens - Trabalho de Desenvolvimento Web</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
